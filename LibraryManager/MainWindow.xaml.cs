@@ -18,11 +18,11 @@ namespace LibraryManager {
 
             foreach (var book in Book.GetAll()) {
                 amountOfBooks++;
-                OutputTextBlock.Text += book.Title;
+                //OutputTextBlock.Text += book.Title;
             }
 
             if(amountOfBooks < 1) {
-                OutputTextBlock.Text += "No books found.";
+                //OutputTextBlock.Text += "No books found.";
             }
         }
 

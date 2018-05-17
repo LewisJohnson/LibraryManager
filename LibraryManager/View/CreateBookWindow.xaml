@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryManager.View"
         mc:Ignorable="d"
-        Title="CreateBookWindow" MinHeight="300" MinWidth="300" Height="300" Width="300">
+        Title="CreateBookWindow" MinHeight="350" MinWidth="300" Height="350" Width="300" WindowStyle="ToolWindow">
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -40,6 +41,9 @@
         <Label Content="Extra" Grid.Row="5" VerticalAlignment="Center"/>
         <TextBox x:Name="Extra" Grid.Column="1" Grid.Row="5" Margin="5"/>
 
-        <Button Content="Save" Grid.Row="6" Width="75" BorderBrush="#FF2E2E2E" Background="#FF444444" Foreground="WhiteSmoke" Grid.ColumnSpan="2" Margin="0,8" Click="SaveBookButtonOnClick" />
+        <Label Content="Image" Grid.Row="6" VerticalAlignment="Center"/>
+        <Button Content="Pick Image" Click="UploadImageButtonOnClick" x:Name="Image" Grid.Column="1" Grid.Row="6" Margin="5"/>
+
+        <Button Content="Save" Grid.Row="7" Width="75" BorderBrush="#FF2E2E2E" Background="#FF444444" Foreground="WhiteSmoke" Grid.ColumnSpan="2" Margin="0,8" Click="SaveBookButtonOnClick" />
     </Grid>
 </Window>

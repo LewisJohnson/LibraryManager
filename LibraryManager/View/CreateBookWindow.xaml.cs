@@ -1,5 +1,6 @@
 ﻿using LibraryManager.Model;
 using System.Windows;
+using Microsoft.Win32;
 
 namespace LibraryManager.View {
     /// <summary>
@@ -22,6 +23,23 @@ namespace LibraryManager.View {
 
             book.Save();
             this.Close();
+        }
+
+        private void UploadImageButtonOnClick(object sender, RoutedEventArgs e) {
+            OpenFileDialog dlg = new OpenFileDialog {
+                FileName = "Image", // Default file name
+                DefaultExt = ".jpg|.jpeg|.png|.bmp", // Default file extension
+                Filter = "Image files (*.bmp, *.jpg)|*.bmp;*.jpg" // Filter files by extension
+            };
+
+            // Show open file dialog box
+            bool? result = dlg.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == true) {
+                // Open document
+                string filename = dlg.FileName;
+            }
         }
     }
 }

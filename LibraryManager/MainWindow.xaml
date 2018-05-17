@@ -8,19 +8,27 @@
         Title="MainWindow" Height="600" Width="800" Closing="WindowClosing" >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
             <RowDefinition Height="550*"/>
+            <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
 
         <TextBlock TextWrapping="NoWrap" Text="Library Manager" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
-        <TextBlock x:Name="OutputTextBlock" Grid.Row="1" Grid.Column="1" ></TextBlock>
-        <StackPanel Margin="0" Grid.Column="0" Grid.Row="1">
-            <Button Click="OnRefreshButtonClick" Content="Refresh" Margin="5" Height="30"/>
-            <Button Click="OnNewBookButtonClick" Content="New Book" Margin="5" Height="30"/>
+        
+        <StackPanel x:Name="OutputTextBlock" Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="Title" >Title</TextBox>
+                <TextBox x:Name="Subtitle">Subtitle</TextBox>
+            </StackPanel>
         </StackPanel>
+        
+        <StackPanel Margin="0" Grid.Column="0" Grid.Row="1">
+            <Button Click="OnNewBookButtonClick" Content="New Book" Margin="5" Height="30" />
+        </StackPanel>
+        <Button Click="OnRefreshButtonClick" Height="30" Content="Refresh" Grid.Row="2" Grid.Column="1" Width="50" HorizontalAlignment="Right" Margin="0,0,5,0" />
     </Grid>
 </Window>
